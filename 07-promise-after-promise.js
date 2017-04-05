@@ -11,12 +11,10 @@
 //
 // Finally, print the fulfilled value of that new promise with console.log.
 
-var firstPromise = first();
+var first_Promise = first(); //
 
-var secondPromise = firstPromise.then(function (val) {
+var second_Promise = first_Promise.then(function (val) {
   return second(val);
 });
 
-secondPromise.then(console.log);
-
-// first().then(second).then(console.log);
+second_Promise.then(console.log);
