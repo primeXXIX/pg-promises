@@ -33,8 +33,16 @@
 //   **Note:** your function should synchronously return the promise!
 //   * Build a sequence of steps like the ones shown above that catchesany thrown errors and logs them to the console.
 
-function parsePromised() {
-  let promise = new Promise(function(resolve, reject) {
 
+function parsePromised (json) {
+  return new Promise(function (fulfill, reject) {
+    try {
+      fulfill(JSON.parse(json));
+    } catch (e) {
+      reject(e);
+    }
   });
-}
+};
+
+parsePromised(process.argv[2])
+.then(null, console.log)
